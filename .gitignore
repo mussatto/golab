@@ -22,3 +22,10 @@ _testmain.go
 *.exe
 *.test
 *.prof
+.idea/compiler.xml
+.idea/dbnavigator.xml
+.idea/golab.iml
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml

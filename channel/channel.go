@@ -8,7 +8,7 @@ import (
 //Channel1 creates a string channel and writes into it
 func Channel1() {
 
-	stringChannel := make(chan int)
+	stringChannel := make(chan int, 5)
 
 	producer := func(words []int) {
 		for _, word := range words {
@@ -23,15 +23,9 @@ func Channel1() {
 	}
 	go producer(values)
 
-	consumer := func() {
-		for true {
-			word := <-stringChannel
-			fmt.Println(word)
-		}
-	}
-	//spawning 4 consumers?
-	for i := 0; i < 5; i++ {
-		go consumer()
+	for word := range stringChannel {
+		fmt.Println(word)
+		time.Sleep(5000000)
 	}
 
 	time.Sleep(1000000000)
