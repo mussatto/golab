@@ -1,9 +1,5 @@
 package channel
 
-import (
-	"fmt"
-	"time"
-)
 
 //Channel1 creates a string channel and writes into it
 func Channel1() {
@@ -18,16 +14,16 @@ func Channel1() {
 
 	values := []int{}
 
-	for i := 0; i < 100000; i++ {
+	for i := 0; i < 1000; i++ {
 		values = append(values, i)
 	}
 	go producer(values)
 
-	for word := range stringChannel {
-		fmt.Println(word)
-		time.Sleep(5000000)
-	}
+	//for word := range stringChannel {
+	//	fmt.Println(word)
+	//	time.Sleep(5000)
+	//}
 
-	time.Sleep(1000000000)
+	//time.Sleep(100000)
 
 }
