@@ -5,6 +5,7 @@ import "fmt"
 //Defer1
 func defer1() {
 	defer fmt.Println("this is going to be printed after return")
+	defer fmt.Println("this is a second command in defer")
 
 	fmt.Println("this is A")
 	fmt.Println("this is B")
