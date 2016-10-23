@@ -3,6 +3,12 @@ package cast
 import "fmt"
 
 func Safecast1() {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered in f", r)
+		}
+	}()
+
 	var firstVar interface{}
 	var secondVar interface{}
 	secondVar = 10
